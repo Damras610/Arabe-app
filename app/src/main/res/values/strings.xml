@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Dictionnaire Arabe-Français</string>
+
+    <!-- Main Screen -->
+    <string name="main_screen_topbar_title">Mon dictionnaire</string>
+    <string name="main_screen_fab_cd">Ajouter un nouveau mot</string>
+</resources>
