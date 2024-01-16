@@ -8,7 +8,7 @@ import com.damras.arabe.model.Dialect
 
 @Entity
 data class Word(
-    @PrimaryKey val uid: Long,
+    @PrimaryKey(autoGenerate = true) val uid: Long,
     @ColumnInfo(name = "french") val french: String,
     @ColumnInfo(name = "arabic") val arabic: String,
     @ColumnInfo(name = "dialect") val dialect: Dialect,

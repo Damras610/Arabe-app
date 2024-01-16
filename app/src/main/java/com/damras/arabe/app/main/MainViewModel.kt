@@ -1,5 +1,6 @@
 package com.damras.arabe.app.main
 
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.navigation.NavController
@@ -7,17 +8,23 @@ import com.damras.arabe.app.navigation.Screen
 import com.damras.arabe.data.WordRepository
 import com.damras.arabe.model.MultiDialectWord
 import com.damras.arabe.model.Word
+import kotlinx.coroutines.flow.MutableStateFlow
 
 class MainViewModel(
     private val wordRepository: WordRepository
 ): ViewModel() {
 
-    enum class DICTIONNARY_MODE {
+
+
+    enum class DICTIONARY_MODE {
         FRENCH_TO_ARABIC,
         ARABIC_TO_FRENCH
     }
 
-    val dictionnaryMode = mutableStateOf(DICTIONNARY_MODE.FRENCH_TO_ARABIC)
+    val dictionaryMode = mutableStateOf(DICTIONARY_MODE.FRENCH_TO_ARABIC)
+    val frenchToArabic = MutableStateFlow(getAllWordsFrenchToArabic())
+    val arabicToFrench = MutableStateFlow(getAllWordsArabicToFrench())
+
 
     fun getAllWordsFrenchToArabic(): Map<Char, List<MultiDialectWord>> {
         val words = wordRepository.getAllWords()
@@ -38,6 +45,13 @@ class MainViewModel(
             it.arabic
         }.groupBy {
             it.arabic.first()
+        }
+    }
+
+    fun switchDictionaryMode() {
+        dictionaryMode.value = when (dictionaryMode.value) {
+            DICTIONARY_MODE.FRENCH_TO_ARABIC -> DICTIONARY_MODE.ARABIC_TO_FRENCH
+            DICTIONARY_MODE.ARABIC_TO_FRENCH -> DICTIONARY_MODE.FRENCH_TO_ARABIC
         }
     }
 

@@ -37,7 +37,7 @@ fun navigation() {
             Main(navController, koinViewModel())
         }
         composable(Screen.AddWord.route) {
-            AddWord()
+            AddWord(navController, koinViewModel())
         }
     }
 }

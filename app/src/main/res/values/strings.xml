@@ -4,4 +4,21 @@
     <!-- Main Screen -->
     <string name="main_screen_topbar_title">Mon dictionnaire</string>
     <string name="main_screen_fab_cd">Ajouter un nouveau mot</string>
+
+    <!-- Add word Screen -->
+    <string name="add_word_screen_topbar_title">Ajouter un mot</string>
+    <string name="add_word_screen_french_word">Français</string>
+    <string name="add_word_screen_arabic_word">Arabe</string>
+    <string name="add_word_screen_transcription">Transcription</string>
+    <string name="add_word_screen_dialect">Dialecte</string>
+    <string name="add_word_screen_dialect_modern">Moderne</string>
+    <string name="add_word_screen_dialect_maghreb">Maghreb</string>
+    <string name="add_word_screen_dialect_bedouin">Bedouin</string>
+    <string name="add_word_screen_dialect_egyptian">Egyptien</string>
+    <string name="add_word_screen_dialect_middle_east">Moyen-Orient</string>
+    <string name="add_word_screen_dialect_arabic_peninsula">Péninsule arabe</string>
+    <string name="add_word_screen_button">Ajouter</string>
+
+    <string name="add_word_screen_naviback_cd">Ajouter un nouveau mot</string>
+
 </resources>
